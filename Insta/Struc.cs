@@ -8,19 +8,32 @@ namespace Insta
 {
    public static  class Struc
     {
+        public static List<Users> allUsers = new List<Users>();
+        public static List<Group> allGroup = new List<Group>();
         public  struct Users
         {
-            int id { get; set; }
-            string login { get; set; }
-            string pass { get; set; }
-            string proxy { get; set; }
-            string proxyPort { get; set; }
-            int countPublication { get; set; }
-            int countSubscribers { get; set; }
-            int countFolowing { get; set; }
-            string task { get; set; }
-            string StatusUser { get; set; }
+            public int id { get; set; }
+            public string login { get; set; }
+            public string pass { get; set; }
+            public string proxy { get; set; }
+            public string proxyPort { get; set; }
+            public string proxyLogin { get; set; }
+            public string proxyPass { get; set; }
+            public int countPublication { get; set; }
+            public int countSubscribers { get; set; }
+            public int countFolowing { get; set; }
+            public string task { get; set; }
+            public string stateUser { get; set; }
+            public string statusWork { get; set; }
+            public string statusUser { get; set; }
+            public string comment { get; set; }
+        }
 
+        public struct Group
+        {
+            public int id { get; set; }
+            public string name { get; set; }
+            public List<int> UsersId { get; set; }
         }
     }
 }
