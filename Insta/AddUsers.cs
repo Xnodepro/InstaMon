@@ -44,6 +44,7 @@ namespace Insta
 
                     };
                     Struc.allUsers.Add(user);
+                    Commands.CreateDir(user.login);
                     p++;
                 }
             }
@@ -64,10 +65,11 @@ namespace Insta
 
                     };
                     Struc.allUsers.Add(user);
+                    Commands.CreateDir(user.login);
                     p++;
                 }
             }
-
+            Commands.SetAllDateToFileJson();//Записываем все данные в json файл
         }
     }
 }

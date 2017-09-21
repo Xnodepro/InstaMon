@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace Insta
 {
-    public partial class AddGroup : Form
+    public partial class RenameGroup : Form
     {
         TreeView TV;
-        public AddGroup(TreeView TV)
+        public RenameGroup(TreeView TV)
         {
             InitializeComponent();
             this.TV = TV;
+            textBox1.Text = TV.SelectedNode.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Struc.allGroup.Add(new Struc.Group
-            {
-                id = Struc.allGroup.Count + 1,
-                name = textBox1.Text,
-                UsersId = new List<int>()
-            });
+            int index = Struc.allGroup.FindIndex(N => N.name == TV.SelectedNode.Text);
+            var group = Struc.allGroup[index];
+            group.name = textBox1.Text;
+            Struc.allGroup[index] = group;
             Commands.ClearTreeView(TV);
             Commands.ViewGroup(TV);
             this.Close();

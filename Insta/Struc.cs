@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Insta
 {
@@ -10,6 +11,7 @@ namespace Insta
     {
         public static List<Users> allUsers = new List<Users>();
         public static List<Group> allGroup = new List<Group>();
+        public static DataGridViewRow[] tmp = null;
         public  struct Users
         {
             public int id { get; set; }
@@ -34,6 +36,13 @@ namespace Insta
             public int id { get; set; }
             public string name { get; set; }
             public List<int> UsersId { get; set; }
+            public Group(int ID,string Name, List<int> UI)
+            {
+                id = ID;
+                name = Name;
+                UsersId = UI;
+            }
+
         }
     }
 }

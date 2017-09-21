@@ -18,5 +18,6 @@ namespace Insta
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        public static Queue<string> Mess = new Queue<string>();
     }
 }
